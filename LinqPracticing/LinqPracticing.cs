@@ -185,7 +185,7 @@ namespace LinqPracticing
 
         public static void SkipWhileStartsWithALetter(List<Product> products, string letter)
         {
-            Console.WriteLine("Skipping the Items that start with {0}", letter);
+            Console.WriteLine("Choosing the first item that doesn't start with {0}", letter);
 
             var result = products
                 .SkipWhile(p => p.Name.StartsWith(letter))
