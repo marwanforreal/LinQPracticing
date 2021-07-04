@@ -213,6 +213,16 @@ namespace LinqPracticing
             else
                 Console.WriteLine("Not All Items contain {0} ", letter);
         }
+
+        public static void DoesAnyItemContainALetter(List<Product> products, string letter)
+        {
+            var result = products.Any(p => p.Name.Contains(letter));
+
+            if (result)
+                Console.WriteLine("Yes, one of the items contains {0}", letter);
+            else
+                Console.WriteLine("No, none of the items contain {0}", letter);
+        }
     }
 
 }

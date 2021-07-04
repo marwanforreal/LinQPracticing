@@ -184,17 +184,13 @@ namespace LinqPracticing
                     LinqPracticing.DoAllItemsContainALetter(Products, letterToLookFor); 
                 }
 
-                if(flag == 19)
+                if (flag == 19)
                 {
-                    Console.WriteLine("Does any of the products contain an 'a' ? ");
+                    Console.WriteLine("Enter a letter to check if any of the items contains it");
 
-                    var result = Products
-                        .Any(p => p.Name.Contains('a'));
+                    var letterToLookFor = Console.ReadLine();
 
-                    if (result)
-                        Console.WriteLine("One of the products does indeed has an 'a' ");
-                    else
-                        Console.WriteLine("None of the items has an 'a' ");
+                    LinqPracticing.DoesAnyItemContainALetter(Products, letterToLookFor); 
                 }
 
                 if(flag == 20)
