@@ -29,7 +29,7 @@ namespace LinqPracticing
 
             var firstList = new List<int> {1,2,3,4,5};
 
-            var secondList = new List<int> {3,4,5,6,7,8};
+            var secondList = new List<int> {};
 
             while (true) {
                 try

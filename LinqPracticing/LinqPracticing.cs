@@ -70,7 +70,9 @@ namespace LinqPracticing
         {
             Console.WriteLine("Finding Items priced higher than {0} and start with {1}.......", price, letter);
 
-            var result = products.Where(p => p.Price > price && p.Name.StartsWith(letter)).ToList();
+            var result = products
+                .Where(p => p.Price > price && p.Name.StartsWith(letter))
+                .ToList();
 
             Product.print(result);
         }
@@ -92,7 +94,8 @@ namespace LinqPracticing
             {
                 Console.WriteLine("Finding an Item using First()");
 
-                var result = products.First(p => p.Name == item);
+                var result = products
+                    .First(p => p.Name == item);
 
                 Product.print(result);
             }
@@ -107,7 +110,8 @@ namespace LinqPracticing
         {
             Console.WriteLine("Finding an Item Using First Or Default");
 
-            var result = products.FirstOrDefault(p => p.Name == item);
+            var result = products
+                .FirstOrDefault(p => p.Name == item);
 
             if (result != null)
                 Product.print(result);
@@ -121,7 +125,8 @@ namespace LinqPracticing
             {
                 Console.WriteLine("Finding one item with a less price than {0} using Last()..............: ", price);
 
-                var result = products.Last(p => p.Price < price);
+                var result = products
+                    .Last(p => p.Price < price);
 
                 Product.print(result);
             }
@@ -136,7 +141,8 @@ namespace LinqPracticing
         {
             Console.WriteLine("Finding the item with {0} as an Id using SingleOrDefault() ", idToFind);
 
-            var result = products.SingleOrDefault(p => p.Id == idToFind);
+            var result = products
+                .SingleOrDefault(p => p.Id == idToFind);
 
             if (result != null)
                 Product.print(result);
