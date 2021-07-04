@@ -57,7 +57,7 @@ namespace LinqPracticing
 
         public static void FindItemsWhichArePricedUnder(List<Product> products, int price)
         {
-            Console.WriteLine("Finding Items Priced Under {0}", price);
+            Console.WriteLine("Finding Items Priced Under {0}.....", price);
 
             var result = products
                 .Where(p => p.Price < price)
@@ -66,5 +66,13 @@ namespace LinqPracticing
             Product.print(result); 
         }
 
+        public static void FindingItemsPricedHigherAndStartsWithACharacter(List<Product> products, int price, string letter)
+        {
+            Console.WriteLine("Finding Items priced higher than {0} and start with {1}.......", price, letter);
+
+            var result = products.Where(p => p.Price > price && p.Name.StartsWith(letter)).ToList();
+
+            Product.print(result); 
+        }
     }
 }

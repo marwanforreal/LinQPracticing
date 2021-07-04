@@ -83,14 +83,13 @@ namespace LinqPracticing
 
                 if(flag == 7)
                 {
-                    Console.WriteLine("Searching for items with higher prices than 500 and name starts with C");
-                   
-                    var FilteredList = Products
-                        .Where(p => p.Price > 500.0 &&
-                        p.Name.StartsWith("C"))
-                        .ToList();
-                    
-                    Product.print(FilteredList);
+                    Console.WriteLine("Enter a price and a letter");
+
+                    var priceInputByUser = Convert.ToInt32(Console.ReadLine());
+
+                    var letterInputByUser = Console.ReadLine();
+
+                    LinqPracticing.FindingItemsPricedHigherAndStartsWithACharacter(Products, priceInputByUser, letterInputByUser);
                 }
 
                 if(flag == 8)
