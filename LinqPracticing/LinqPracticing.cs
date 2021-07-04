@@ -182,6 +182,17 @@ namespace LinqPracticing
 
             Product.print(result); 
         }
+
+        public static void SkipWhileStartsWithALetter(List<Product> products, string letter)
+        {
+            Console.WriteLine("Skipping the Items that start with {0}", letter);
+
+            var result = products
+                .SkipWhile(p => p.Name.StartsWith(letter))
+                .ToList();
+
+            Product.print(result); 
+        }
     }
 
 }

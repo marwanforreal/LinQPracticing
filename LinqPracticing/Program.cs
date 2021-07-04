@@ -162,13 +162,11 @@ namespace LinqPracticing
 
                 if (flag == 16)
                 {
-                    Console.WriteLine("Skip While Starts with C");
+                    Console.WriteLine("Enter a Letter to skip the items that starts with");
 
-                    var result = Products
-                        .SkipWhile(p => p.Name.StartsWith("C"))
-                        .ToList();
+                    var lettersToSkip = Console.ReadLine();
 
-                    Product.print(result);
+                    LinqPracticing.SkipWhileStartsWithALetter(Products, lettersToSkip);
 
                 }
 
