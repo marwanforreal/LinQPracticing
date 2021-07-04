@@ -94,53 +94,29 @@ namespace LinqPracticing
 
                 if(flag == 8)
                 {
-                    Console.WriteLine("Creating a custom query (By Item) which only finds a string of items");
+                    Console.WriteLine("Enter the item you are trying to find");
 
-                    Console.WriteLine("Enter An Item Name To Find");
+                    var itemToFind = Console.ReadLine();
 
-                    var ItemToFind = Console.ReadLine();
-
-                    var FilteredList = Products
-                        .ByItem(ItemToFind)
-                        .ToList();
-
-                    Product.print(FilteredList); 
+                    LinqPracticing.CustomQueryByItem(Products, itemToFind); 
                 }
 
                 if(flag == 9)
                 {
-                    try
-                    {
-                        Console.WriteLine("First");
+                    Console.WriteLine("Enter the Item you're looking for: ");
 
-                        Console.WriteLine("Pick a Name");
+                    var itemToFind = Console.ReadLine();
 
-                        var NameToFind = Console.ReadLine();
-
-                        var ResultList = Products.First(prod => prod.Name == NameToFind);
-
-                        Product.print(ResultList);
-                    }
-                    catch
-                    {
-                        Console.WriteLine("Item Not Found!"); 
-                    }
+                    LinqPracticing.FindingAnItemUsingFirst(Products, itemToFind); 
                 }
 
                 if(flag == 10)
                 {
-                    Console.WriteLine("FirstOrDefault");
+                    Console.WriteLine("Enter the item you're looking for: ");
 
-                    Console.WriteLine("Pick an Item");
+                    var itemToFind = Console.ReadLine();
 
-                    var ItemToFind = Console.ReadLine();
-
-                    var Result = Products.FirstOrDefault(prod => prod.Name == ItemToFind);
-                    
-                    if (Result == null)
-                        Console.WriteLine("Item Not Found");
-                    else
-                        Product.print(Result);
+                    LinqPracticing.FindingAnItemUsingFirstOrDefault(Products, itemToFind); 
                 }
 
                 if (flag == 11)

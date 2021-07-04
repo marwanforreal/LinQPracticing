@@ -74,5 +74,46 @@ namespace LinqPracticing
 
             Product.print(result); 
         }
+
+        public static void CustomQueryByItem(List<Product> products, string item)
+        {
+            Console.WriteLine("Custom Query By Item");
+
+            var result = products
+                .ByItem(item)
+                .ToList();
+
+            Product.print(result);
+        }
+
+        public static void FindingAnItemUsingFirst(List<Product> products, string item)
+        {
+            try
+            {
+                Console.WriteLine("Finding an Item using First()");
+
+                var result = products.First(p => p.Name == item);
+
+                Product.print(result); 
+            }
+            
+            catch
+            {
+                Console.WriteLine("Item Not Found!");
+            }
+        }
+
+        public static void FindingAnItemUsingFirstOrDefault(List<Product> products, string item)
+        {
+            Console.WriteLine("Finding an Item Using First Or Default");
+
+            var result = products.FirstOrDefault(p => p.Name == item); 
+
+            if (result != null)
+                Product.print(result); 
+            else
+                Console.WriteLine("Item Not Found!!");
+            
+        }
     }
 }
