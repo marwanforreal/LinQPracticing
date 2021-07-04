@@ -138,7 +138,7 @@ namespace LinqPracticing
 
             var result = products.SingleOrDefault(p => p.Id == idToFind);
 
-            if(result != null)
+            if (result != null)
                 Product.print(result);
             else
                 Console.WriteLine("Item Not Found!");
@@ -171,7 +171,7 @@ namespace LinqPracticing
 
         public static void TakingItems(List<Product> products, int amountToTake)
         {
-            Console.WriteLine("Ordering them by name length then taking only the first {0}" , amountToTake);
+            Console.WriteLine("Ordering them by name length then taking only the first {0}", amountToTake);
 
             products.ForEach(p => p.NameLength = p.Name.Length);
 
@@ -180,7 +180,7 @@ namespace LinqPracticing
                 .Take(amountToTake)
                 .ToList();
 
-            Product.print(result); 
+            Product.print(result);
         }
 
         public static void SkipWhileStartsWithALetter(List<Product> products, string letter)
@@ -191,7 +191,7 @@ namespace LinqPracticing
                 .SkipWhile(p => p.Name.StartsWith(letter))
                 .ToList();
 
-            Product.print(result); 
+            Product.print(result);
         }
 
         public static void ChoosingDistinctItems(List<Product> products)
@@ -206,9 +206,9 @@ namespace LinqPracticing
 
         public static void DoAllItemsContainALetter(List<Product> products, string letter)
         {
-            bool result = products.All(p => p.Name.Contains(letter)); 
+            bool result = products.All(p => p.Name.Contains(letter));
 
-            if(result)
+            if (result)
                 Console.WriteLine("All Items contain {0} ", letter);
             else
                 Console.WriteLine("Not All Items contain {0} ", letter);
@@ -223,6 +223,24 @@ namespace LinqPracticing
             else
                 Console.WriteLine("No, none of the items contain {0}", letter);
         }
-    }
 
+        public static void FindingTheIdUsingContains(List<Product> products, int idToFind)
+        {
+            var OnlyIdsColumns = products.Select(p => p.Id).ToList();
+
+            if (OnlyIdsColumns.Contains(idToFind))
+            {
+                Console.WriteLine("Id was Found");
+
+                var foundedObject = products.SingleOrDefault(p => p.Id == idToFind);
+
+                Product.print(foundedObject);
+            }
+            else
+            {
+                Console.WriteLine("Id Was Not Found");
+            }
+        }
+
+    }
 }

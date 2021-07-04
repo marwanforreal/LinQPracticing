@@ -195,23 +195,11 @@ namespace LinqPracticing
 
                 if(flag == 20)
                 {
-                    Console.WriteLine("Contains");
-
-                    Console.WriteLine("Please Enter an ID to search if it exists");
+                    Console.WriteLine("Please Enter An Id");
 
                     var idToLookFor = Convert.ToInt32(Console.ReadLine());
 
-                    var idColumnsOnly = Products
-                        .Select(p => p.Id)
-                        .ToList();
-
-                    var result = idColumnsOnly.Contains(idToLookFor);
-
-                    if (result)
-                        Console.WriteLine("Id {0} Exists", idToLookFor);
-                    else
-                        Console.WriteLine("Id {0} does not exist", idToLookFor);
-                    
+                    LinqPracticing.FindingTheIdUsingContains(Products, idToLookFor); 
                 }
 
                 if(flag == 21)
