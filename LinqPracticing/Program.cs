@@ -64,13 +64,7 @@ namespace LinqPracticing
 
                 if (flag == 4)
                 {
-                    Console.WriteLine("Order By Price DESCENDING");
-
-                    var OrderedList = Products
-                        .OrderByDescending(p => p.Price)
-                        .ToList();
-
-                    Product.print(OrderedList);
+                    LinqPracticing.OrderByDescending(Products);
                 }
 
                 if(flag == 5)

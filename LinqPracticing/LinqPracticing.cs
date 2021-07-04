@@ -37,5 +37,14 @@ namespace LinqPracticing
             Product.print(result);
         }
 
+        public static void OrderByDescending(List<Product> products)
+        {
+            Console.WriteLine("Order By Based On Price Descending");
+
+            var result = products.OrderByDescending(p => p.Price).ToList();
+
+            Product.print(result);
+        }
+
     }
 }
