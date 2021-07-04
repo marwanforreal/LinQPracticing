@@ -8,21 +8,30 @@ namespace LinqPracticing
 {
     public static class LinqPracticing
     {
-        public static void SelectAll(List<Product> Products)
+        public static void SelectAll(List<Product> products)
         {
             Console.WriteLine("Select All");
 
-            var LinqList = Products
+            var LinqList = products
                 .Select(p => p)
                 .ToList();
 
             Product.print(LinqList);
         }
 
-        public static void SelectNameColumnOnly(List<Product> Products)
+        public static void SelectNameColumnOnly(List<Product> products)
         {
-            var result = Products.Select(p => p.Name).ToList();
+            var result = products.Select(p => p.Name).ToList();
+
             Product.print(result); 
         }
+
+        public static void OrderByAscending(List<Product> products)
+        {
+            var result = products.OrderBy(p => p.Price).ToList();
+
+            Product.print(result);
+        }
+
     }
 }

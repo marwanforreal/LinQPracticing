@@ -49,24 +49,12 @@ namespace LinqPracticing
                 
                 if (flag == 1)
                 {
-                    Console.WriteLine("Select All");
-
-                    var LinqList = Products
-                        .Select(p => p)
-                        .ToList();
-
-                    Product.print(LinqList);
+                    LinqPracticing.SelectAll(Products);
                 }
 
                 if (flag == 2)
                 {
-                    Console.WriteLine("Choosing the name column only");
-
-                    var NamesList = Products
-                        .Select(p => p.Name)
-                        .ToList();
-
-                    Product.print(NamesList);
+                    LinqPracticing.SelectNameColumnOnly(Products);
                 }
 
                 if (flag == 3)
