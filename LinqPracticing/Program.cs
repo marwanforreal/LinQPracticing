@@ -74,13 +74,11 @@ namespace LinqPracticing
 
                 if(flag == 6)
                 {
-                    Console.WriteLine("Searching for the prices less than 300");
+                    Console.WriteLine("Please Enter a price to find the items which are priced under? ");
 
-                    var FilteredList = Products
-                        .Where(p => p.Price < 300)
-                        .ToList();
+                    var priceInputByUser = Convert.ToInt32(Console.ReadLine());
 
-                    Product.print(FilteredList); 
+                    LinqPracticing.FindItemsWhichArePricedUnder(Products, priceInputByUser); 
                 }
 
                 if(flag == 7)

@@ -55,5 +55,16 @@ namespace LinqPracticing
             Product.print(result); 
         }
 
+        public static void FindItemsWhichArePricedUnder(List<Product> products, int price)
+        {
+            Console.WriteLine("Finding Items Priced Under {0}", price);
+
+            var result = products
+                .Where(p => p.Price < price)
+                .ToList();
+
+            Product.print(result); 
+        }
+
     }
 }
