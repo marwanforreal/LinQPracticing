@@ -172,26 +172,16 @@ namespace LinqPracticing
 
                 if(flag == 17)
                 {
-                    Console.WriteLine("Select Distinct Items");
-
-                    var result = Products
-                        .Select(p => p.Name)
-                        .Distinct()
-                        .ToList();
-
-                    Product.print(result);
+                    LinqPracticing.ChoosingDistinctItems(Products); 
                 }
 
                 if(flag == 18)
                 {
-                    Console.WriteLine("Do All Products have 'a' in them? Using All()");
+                    Console.WriteLine("Enter a letter to check whether all items contain it or not:");
 
-                    var result = Products.All(p => p.Name.Contains("a")); 
+                    var letterToLookFor = Console.ReadLine();
 
-                    if(result)
-                        Console.WriteLine("All Items Contain an 'a' ");
-                    else
-                        Console.WriteLine("Not all items contain an 'a'");
+                    LinqPracticing.DoAllItemsContainALetter(Products, letterToLookFor); 
                 }
 
                 if(flag == 19)

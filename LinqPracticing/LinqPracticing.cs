@@ -193,6 +193,26 @@ namespace LinqPracticing
 
             Product.print(result); 
         }
+
+        public static void ChoosingDistinctItems(List<Product> products)
+        {
+            var result = products
+                .Select(p => p.Name)
+                .Distinct()
+                .ToList();
+
+            Product.print(result);
+        }
+
+        public static void DoAllItemsContainALetter(List<Product> products, string letter)
+        {
+            bool result = products.All(p => p.Name.Contains(letter)); 
+
+            if(result)
+                Console.WriteLine("All Items contain {0} ", letter);
+            else
+                Console.WriteLine("Not All Items contain {0} ", letter);
+        }
     }
 
 }
