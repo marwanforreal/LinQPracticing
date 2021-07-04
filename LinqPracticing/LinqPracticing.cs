@@ -242,5 +242,13 @@ namespace LinqPracticing
             }
         }
 
+        public static void SamePriceChecker(List<Product> products, Product comparedProduct, ProductPriceComparerClass EC)
+        {
+            Console.WriteLine("Checking If the Price Is Equal using Equality comparer");
+
+            var result = products.Contains(comparedProduct, EC);
+
+            Console.WriteLine(result);
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LinqPracticing
 {
-    class ProductPriceComparerClass : EqualityComparer<Product>
+    public class ProductPriceComparerClass : EqualityComparer<Product>
     {
         public override bool Equals(Product x, Product y)
         {

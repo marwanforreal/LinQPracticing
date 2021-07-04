@@ -204,22 +204,18 @@ namespace LinqPracticing
 
                 if(flag == 21)
                 {
-                    Console.WriteLine("Checking If the Price Is Equal using Equality comparer");
-
                     var productComparer = new ProductPriceComparerClass();
 
                     var productToBeCompared = new Product { Id = 12, Name = "Compared Object", Price = 7.35 };
 
-                    var result = Products.Contains(productToBeCompared, productComparer);
-
-                    Console.WriteLine(result);
+                    LinqPracticing.SamePriceChecker(Products, productToBeCompared, productComparer);
                 }
 
                 if(flag == 22)
                 {
                     var result = firstList.Except(secondList).ToList();
 
-                    Product.print(result); 
+                    Product.print(result);
 
                 }
 
