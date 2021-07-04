@@ -121,23 +121,11 @@ namespace LinqPracticing
 
                 if (flag == 11)
                 {
-                    try
-                    {
-                        Console.WriteLine("Last");
+                    Console.WriteLine("Please Enter A price");
 
-                        Console.WriteLine("Enter A price to find one item that has a price less");
+                    var priceToFindUnder = Convert.ToInt32(Console.ReadLine());
 
-                        var price = Convert.ToInt32(Console.ReadLine());
-
-                        var Result = Products.Last(prod => prod.Price < price);
-
-                        Product.print(Result);
-                    }
-
-                    catch
-                    {
-                        Console.WriteLine("Item Not Found!");
-                    }
+                    LinqPracticing.FindingAnItemUsingLast(Products, priceToFindUnder); 
                 }
 
                 if (flag == 12)

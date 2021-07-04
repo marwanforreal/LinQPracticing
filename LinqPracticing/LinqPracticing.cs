@@ -25,7 +25,7 @@ namespace LinqPracticing
 
             var result = products.Select(p => p.Name).ToList();
 
-            Product.print(result); 
+            Product.print(result);
         }
 
         public static void OrderByAscending(List<Product> products)
@@ -52,7 +52,7 @@ namespace LinqPracticing
 
             var result = products.OrderBy(p => p.Price).ThenBy(p => p.Name).ToList();
 
-            Product.print(result); 
+            Product.print(result);
         }
 
         public static void FindItemsWhichArePricedUnder(List<Product> products, int price)
@@ -63,7 +63,7 @@ namespace LinqPracticing
                 .Where(p => p.Price < price)
                 .ToList();
 
-            Product.print(result); 
+            Product.print(result);
         }
 
         public static void FindingItemsPricedHigherAndStartsWithACharacter(List<Product> products, int price, string letter)
@@ -72,7 +72,7 @@ namespace LinqPracticing
 
             var result = products.Where(p => p.Price > price && p.Name.StartsWith(letter)).ToList();
 
-            Product.print(result); 
+            Product.print(result);
         }
 
         public static void CustomQueryByItem(List<Product> products, string item)
@@ -94,9 +94,9 @@ namespace LinqPracticing
 
                 var result = products.First(p => p.Name == item);
 
-                Product.print(result); 
+                Product.print(result);
             }
-            
+
             catch
             {
                 Console.WriteLine("Item Not Found!");
@@ -107,13 +107,30 @@ namespace LinqPracticing
         {
             Console.WriteLine("Finding an Item Using First Or Default");
 
-            var result = products.FirstOrDefault(p => p.Name == item); 
+            var result = products.FirstOrDefault(p => p.Name == item);
 
             if (result != null)
-                Product.print(result); 
+                Product.print(result);
             else
                 Console.WriteLine("Item Not Found!!");
-            
+        }
+
+        public static void FindingAnItemUsingLast(List<Product> products, int price)
+        {
+            try
+            {
+                Console.WriteLine("Finding one item with a less price than {0} using Last()..............: ", price);
+
+                var result = products.Last(p => p.Price < price);
+
+                Product.print(result);
+            }
+
+            catch
+            {
+                Console.WriteLine("Item Not FOUND!");
+            }
         }
     }
+
 }
