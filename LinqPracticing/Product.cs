@@ -38,8 +38,10 @@ namespace LinqPracticing
         {
             foreach (int x in listofint)
             {
-                Console.WriteLine(x);
+                Console.Write(x);
             }
+
+            Console.WriteLine(" ");
         }
 
         public static void print(Product prod)

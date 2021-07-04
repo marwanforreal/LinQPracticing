@@ -226,7 +226,9 @@ namespace LinqPracticing
 
         public static void FindingTheIdUsingContains(List<Product> products, int idToFind)
         {
-            var OnlyIdsColumns = products.Select(p => p.Id).ToList();
+            var OnlyIdsColumns = products
+                .Select(p => p.Id)
+                .ToList();
 
             if (OnlyIdsColumns.Contains(idToFind))
             {
@@ -249,6 +251,34 @@ namespace LinqPracticing
             var result = products.Contains(comparedProduct, EC);
 
             Console.WriteLine(result);
+        }
+
+        public static void IntersectUnionConcatExcept(List<int> firstList, List<int> secondList)
+        {
+            var union = firstList.Union(secondList).ToList();
+
+            var intersect = firstList.Intersect(secondList).ToList();
+
+            var concat = firstList.Concat(secondList).ToList();
+
+            var except = firstList.Except(secondList).ToList();
+
+            Console.WriteLine("Union: ");
+
+            Product.print(union);
+
+            Console.WriteLine("intersect: ");
+
+            Product.print(intersect);
+
+            Console.WriteLine("Concat: ");
+
+            Product.print(concat);
+
+            Console.WriteLine("Except: ");
+
+            Product.print(except); 
+           
         }
     }
 }

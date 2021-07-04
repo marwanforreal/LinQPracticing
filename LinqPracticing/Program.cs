@@ -27,9 +27,9 @@ namespace LinqPracticing
 
             int flag;
 
-            var firstList = new List<int> { 1, 2, 4, 5, 67, 7, 7, 3, 45, 2, 6, 4, 236, 262, 6, 242, 6, 2 };
+            var firstList = new List<int> {1,2,3,4,5};
 
-            var secondList = new List<int> { 1, 2, 4, 6, 6, 3, 4, 5, 6, 3, 5, 99, 9325, 1, 593, 5125, 5195, 3915, 3, 11, 4, 4, 5, 1251 };
+            var secondList = new List<int> {3,4,5,6,7,8};
 
             while (true) {
                 try
@@ -211,33 +211,17 @@ namespace LinqPracticing
                     LinqPracticing.SamePriceChecker(Products, productToBeCompared, productComparer);
                 }
 
-                if(flag == 22)
+                if (flag == 22)
                 {
-                    var result = firstList.Except(secondList).ToList();
+                    Console.WriteLine("First List: ");
 
-                    Product.print(result);
+                    Product.print(firstList);
 
-                }
+                    Console.WriteLine("SecondList: ");
 
-                if(flag == 23)
-                {
-                    var result = firstList.Intersect(secondList).ToList();
+                    Product.print(secondList);
 
-                    Product.print(result); 
-                }
-
-                if(flag == 24)
-                {
-                    var result = firstList.Union(secondList).ToList();
-
-                    Product.print(result); 
-                }
-
-                if(flag == 25)
-                { 
-                    var result = firstList.Concat(secondList).ToList();
-
-                    Product.print(result); 
+                    LinqPracticing.IntersectUnionConcatExcept(firstList, secondList);
                 }
 
                 if(flag > 25 || flag < 1)
