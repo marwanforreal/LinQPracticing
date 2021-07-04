@@ -69,13 +69,7 @@ namespace LinqPracticing
 
                 if(flag == 5)
                 {
-                    Console.WriteLine("Order By Two Fields");
-
-                    var OrderedList = Products.OrderBy(prod => prod.Price)
-                        .ThenBy(p => p.Name)
-                        .ToList();
-
-                    Product.print(OrderedList);
+                    LinqPracticing.OrderByTwoFields(Products);
                 }
 
                 if(flag == 6)

@@ -46,5 +46,14 @@ namespace LinqPracticing
             Product.print(result);
         }
 
+        public static void OrderByTwoFields(List<Product> products)
+        {
+            Console.WriteLine("Order By Two Fields");
+
+            var result = products.OrderBy(p => p.Price).ThenBy(p => p.Name).ToList();
+
+            Product.print(result); 
+        }
+
     }
 }
