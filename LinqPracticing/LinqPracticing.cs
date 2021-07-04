@@ -18,5 +18,11 @@ namespace LinqPracticing
 
             Product.print(LinqList);
         }
+
+        public static void SelectNameColumnOnly(List<Product> Products)
+        {
+            var result = Products.Select(p => p.Name).ToList();
+            Product.print(result); 
+        }
     }
 }
