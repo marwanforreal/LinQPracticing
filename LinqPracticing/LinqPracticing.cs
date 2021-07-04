@@ -21,6 +21,8 @@ namespace LinqPracticing
 
         public static void SelectNameColumnOnly(List<Product> products)
         {
+            Console.WriteLine("Select Name Column Only");
+
             var result = products.Select(p => p.Name).ToList();
 
             Product.print(result); 
@@ -28,6 +30,8 @@ namespace LinqPracticing
 
         public static void OrderByAscending(List<Product> products)
         {
+            Console.WriteLine("Order By Ascending");
+
             var result = products.OrderBy(p => p.Price).ToList();
 
             Product.print(result);

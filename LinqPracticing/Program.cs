@@ -59,13 +59,7 @@ namespace LinqPracticing
 
                 if (flag == 3)
                 {
-                    Console.WriteLine("Order By Price ASCENDING");
-
-                    var OrderedList = Products
-                        .OrderBy(p => p.Price)
-                        .ToList();
-
-                    Product.print(OrderedList);
+                    LinqPracticing.OrderByAscending(Products);
                 }
 
                 if (flag == 4)
