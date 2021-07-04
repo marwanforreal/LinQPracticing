@@ -130,31 +130,16 @@ namespace LinqPracticing
 
                 if (flag == 12)
                 {
-                    Console.WriteLine("Single Or Default");
+                    Console.WriteLine("Please Enter an ID to find: ");
 
-                    Console.WriteLine("Choose an ID");
+                    var idToFindForUser = Convert.ToInt32(Console.ReadLine());
 
-                    var id = Convert.ToInt32(Console.ReadLine());
-
-                    var Result = Products.SingleOrDefault(prod => prod.Id == id);
-
-                    if(Result == null)
-                        Console.WriteLine("Record Not Found!");
-                    else
-                        Product.print(Result); 
+                    LinqPracticing.FindingByIdUsingSingleOrDefault(Products, idToFindForUser);
                 }
 
                 if (flag == 13)
                 {
-                    Console.WriteLine("Calculated Property -- Name Length");
-
-                    Products.ForEach(p => p.NameLength = p.Name.Length);
-
-                    var result = Products
-                        .Select(y => y.NameLength)
-                        .ToList();
-
-                    Product.print(result); 
+                    LinqPracticing.CalculatingNameLengthUsingName(Products);
                 }
 
                 if(flag == 14)

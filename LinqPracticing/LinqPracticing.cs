@@ -131,6 +131,31 @@ namespace LinqPracticing
                 Console.WriteLine("Item Not FOUND!");
             }
         }
+
+        public static void FindingByIdUsingSingleOrDefault(List<Product> products, int idToFind)
+        {
+            Console.WriteLine("Finding the item with {0} as an Id using SingleOrDefault() ", idToFind);
+
+            var result = products.SingleOrDefault(p => p.Id == idToFind);
+
+            if(result != null)
+                Product.print(result);
+            else
+                Console.WriteLine("Item Not Found!");
+        }
+
+        public static void CalculatingNameLengthUsingName(List<Product> products)
+        {
+            Console.WriteLine("Calculating Name Length Using Name and ForEach().............");
+
+            products.ForEach(p => p.NameLength = p.Name.Length);
+
+            var result = products
+                .Select(p => p.NameLength)
+                .ToList();
+
+            Product.print(result);
+        }
     }
 
 }
