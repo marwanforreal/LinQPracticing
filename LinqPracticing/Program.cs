@@ -144,35 +144,23 @@ namespace LinqPracticing
 
                 if(flag == 14)
                 {
-                    Console.WriteLine("Skip First 5");
+                    Console.WriteLine("Please Enter the amount to skip");
 
-                    var result = Products
-                        .OrderBy(p => p.Price)
-                        .Skip(6)
-                        .ToList();
+                    var amountToSkipInput = Convert.ToInt32(Console.ReadLine());
 
-                    Product.print(result);
+                    LinqPracticing.SkippingItems(Products, amountToSkipInput);
                 }
 
                 if(flag == 15)
                 {
-                    Console.WriteLine("Take First 5 Name Lengths, Ordered by Name Lengths");
+                    Console.WriteLine("Please Enter the amount to take after ordering");
 
-                    Products.ForEach(p => p.NameLength = p.Name.Length);
+                    var amountToTake = Convert.ToInt32(Console.ReadLine());
 
-                    var orderedList = Products
-                        .OrderBy(p => p.NameLength)
-                        .Take(5)
-                        .ToList();
-
-                    var result = orderedList
-                        .Select(p => p.NameLength)
-                        .ToList();
-
-                    Product.print(result);
+                    LinqPracticing.TakingItems(Products, amountToTake); 
                 }
 
-                if(flag == 16)
+                if (flag == 16)
                 {
                     Console.WriteLine("Skip While Starts with C");
 

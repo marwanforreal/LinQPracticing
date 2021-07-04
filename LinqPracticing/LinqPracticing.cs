@@ -156,6 +156,32 @@ namespace LinqPracticing
 
             Product.print(result);
         }
+
+        public static void SkippingItems(List<Product> products, int amountToSkip)
+        {
+            Console.WriteLine("Ordering them then skipping the first {0}", amountToSkip);
+
+            var result = products
+                .OrderBy(p => p.Price)
+                .Skip(amountToSkip)
+                .ToList();
+
+            Product.print(result);
+        }
+
+        public static void TakingItems(List<Product> products, int amountToTake)
+        {
+            Console.WriteLine("Ordering them by name length then taking only the first {0}" , amountToTake);
+
+            products.ForEach(p => p.NameLength = p.Name.Length);
+
+            var result = products
+                .OrderBy(p => p.NameLength)
+                .Take(amountToTake)
+                .ToList();
+
+            Product.print(result); 
+        }
     }
 
 }
