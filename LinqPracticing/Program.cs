@@ -224,7 +224,7 @@ namespace LinqPracticing
                     LinqPracticing.IntersectUnionConcatExcept(firstList, secondList);
                 }
 
-                if(flag > 25 || flag < 1)
+                if(flag > 23 || flag < 1)
                 {
                     Console.WriteLine("Input too high or too low, please enter again");
                 }
